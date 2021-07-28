@@ -66,24 +66,44 @@ class _ScrollDatePickerState extends State<ScrollDatePicker> {
         i
     ];
 
-    if (widget.locale == DatePickerLocale.ko_kr) {
-      _month = [for (int i = 1; i <= 12; i++) i];
-    } else {
-      _month = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
-      ];
+    switch (widget.locale) {
+      case DatePickerLocale.en_us:
+        _month = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December'
+        ];
+        break;
+      case DatePickerLocale.de_de:
+        _month = [
+          'Januar',
+          'Februar',
+          'März',
+          'April',
+          'Mai',
+          'Juni',
+          'Juli',
+          'August',
+          'September',
+          'Oktober',
+          'November',
+          'Dezember'
+        ];
+        break;
+      case DatePickerLocale.ko_kr:
+        _month = [for (int i = 1; i <= 12; i++) i];
+        break;
     }
+
     _selectedYear = widget.controller.initialDateTime.year;
     _selectedMonth = widget.controller.initialDateTime.month;
     _selectedDay = widget.controller.initialDateTime.day;

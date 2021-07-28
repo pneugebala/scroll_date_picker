@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 enum DatePickerLocale {
   en_us,
+  de_de,
   ko_kr,
 }
 
